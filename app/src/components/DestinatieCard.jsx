@@ -1,22 +1,24 @@
 export default function DestinatieCard({ destinatie, onToggle, onDelete }) {
   const { id, oras, tara, zile, vizitat } = destinatie
+
   return (
     <article className={vizitat ? 'card vizitat' : 'card'}>
       <h3>{oras}</h3>
       <p className="tara">{tara}</p>
       <p className="zile">{zile} zile</p>
-      <button type="button" onClick={() => onToggle(id)}>
-        {vizitat ? 'Vizitat' : 'Marchează vizitat'}
-      </button>
-      {onDelete && (
+      <div className="actiuni-card">
+        <button type="button" onClick={() => onToggle(id)}>
+          {vizitat ? 'Vizitat' : 'Marchează vizitat'}
+        </button>
         <button
           type="button"
+          className="btn-delete"
           onClick={() => onDelete(id)}
-          style={{ marginTop: '0.4rem', background: '#dc2626' }}
+          title="Șterge destinația"
         >
           Șterge
         </button>
-      )}
+      </div>
     </article>
   )
 }

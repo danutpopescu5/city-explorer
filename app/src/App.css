@@ -19,15 +19,32 @@ h1 {
   display: flex;
   gap: 0.6rem;
   margin-bottom: 1.5rem;
+  align-items: flex-start;
 }
 
-.formular input {
+.camp {
   flex: 1;
+  min-width: 0;
+}
+
+.camp input {
+  width: 100%;
   padding: 0.5rem 0.7rem;
   border: 1px solid #c3c7cf;
   border-radius: 7px;
   font: inherit;
-  min-width: 0;
+  box-sizing: border-box;
+}
+
+.formular input.invalid {
+  border-color: #ef4444;
+  background: #fff5f5;
+}
+
+.eroare-camp {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.8rem;
+  color: #ef4444;
 }
 
 button {
@@ -38,6 +55,24 @@ button {
   color: #fff;
   font: inherit;
   cursor: pointer;
+}
+
+button:disabled {
+  background: #a594f9;
+  cursor: not-allowed;
+}
+
+.cautare {
+  margin-bottom: 1.2rem;
+}
+
+.cautare input {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #c3c7cf;
+  border-radius: 7px;
+  font: inherit;
+  box-sizing: border-box;
 }
 
 .info {
@@ -56,22 +91,30 @@ button {
   border: 1px solid #d8dbe0;
   border-radius: 10px;
   padding: 0.9rem 1rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .card h3 {
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.2rem 0;
 }
 
 .card .tara,
 .card .zile {
   margin: 0;
   color: #6b7280;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
-.card button {
+.actiuni-card {
+  display: flex;
+  gap: 0.5rem;
   margin-top: 0.8rem;
-  width: 100%;
+}
+
+.actiuni-card button {
+  flex: 1;
 }
 
 .card.vizitat {
@@ -79,6 +122,74 @@ button {
   border-color: #86efac;
 }
 
-.card.vizitat button {
+.card.vizitat button:first-child {
   background: #16a34a;
+}
+
+.btn-delete {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+  border: 1px solid #fca5a5 !important;
+}
+
+.btn-delete:hover {
+  background: #fecaca !important;
+}
+
+.stare {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1e40af;
+  margin-bottom: 1.2rem;
+}
+
+.stare.eroare {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.gol {
+  padding: 2rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  text-align: center;
+  color: #6b7280;
+  margin-top: 1rem;
+}
+
+.panou {
+  margin-bottom: 1.4rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d8dbe0;
+  border-radius: 10;
+}
+
+.panou h2 {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.panou label {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.panou input {
+  width: 70px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #c3c7cf;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.panou ul {
+  margin: 0.7rem 0 0 0;
+  padding-left: 1.1rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.panou h2 {
+  margin: 0;
 }
